@@ -42,7 +42,7 @@ def tiro_IA(acerto):
     #Aumenta a chance de atirar na posição se o bloco for o navío do Player
     for num in tiros_disponivel:
         if num in naviosP1:
-            chance_tiro.append(5)
+            chance_tiro.append(10)
         else:
             chance_tiro.append(1)
     print('\nIA está escolhendo...')  
@@ -136,7 +136,7 @@ def iniciar_jogo_PVIA():
     #Mensagem exibida ao iniciar o jogo
     espere('Iniciando o Jogo')
     #Sistema de adicionar os navíos do player
-    print(adicionar_navios('1'))
+    adicionar_navios('1')
     #Salva a posição dos navíos do player numa lista para ajudar o BOT
     for num in navios['1'].values():
         naviosP1.extend(num)
@@ -160,8 +160,8 @@ def iniciar_jogo_PVP():
     #Mensagem exibida ao iniciar o jogo
     espere('Iniciando o Jogo')
     #Sistema de adicionar os navíos de cada Player
-    print(adicionar_navios('1'))
-    print(adicionar_navios('2'))
+    adicionar_navios('1')
+    adicionar_navios('2')
     #Jogo iniciado a partir de uma repetição. Quando uma condição for verdadeira, o jogo para e é exibido uma mensagem informando o vencedor
     while True:
         #Função para verificar se o player 1 é o vencedor
@@ -296,7 +296,7 @@ def mostrar_mapa_navios(player):
         #Váriavel para saber se o Player colocou algum návio no bloco. Caso sim, exibe o Barco. Caso não, exibe a Água
         navioP = False
         if bloco in range(0, 100, 10):
-            print(int(bloco/10), end='  ')
+            print(int(bloco/10), end='   ')
         for  blocos in navios[player].values():
             if bloco in blocos:
                 if bloco in range(9, 100, 10):
